@@ -1,0 +1,100 @@
+/* --- PENGATURAN DASAR --- */
+/* Ini mengatur agar pinggiran layar tidak ada jarak putih yang mengganggu */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Font yang dipakai dan warna background web (warna pink super muda) */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff0f5; 
+    color: #333;
+}
+
+/* --- DESAIN BAGIAN ATAS (HERO) --- */
+.hero-section {
+    display: flex; /* Bikin teks dan foto bersebelahan */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Tingginya selayar penuh */
+    background: linear-gradient(to right, #ffb6c1, #ffc0cb); /* Efek warna gradasi pink */
+    padding: 20px;
+    text-align: center;
+}
+
+.teks-hero h1 {
+    font-size: 3rem;
+    color: #d10056; /* Warna teks pink tua */
+    margin-bottom: 15px;
+}
+
+.foto-hero img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; /* Biar foto tidak gepeng */
+    border-radius: 50%; /* Bikin fotonya jadi bulat! */
+    border: 5px solid white; /* Kasih garis putih di pinggir foto */
+    margin-left: 50px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Efek bayangan */
+}
+
+/* --- DESAIN BAGIAN PESAN --- */
+.pesan-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+.pesan-section h2 {
+    color: #ff69b4;
+    margin-bottom: 20px;
+}
+
+.pesan-section p {
+    max-width: 600px; /* Lebar teks dibatasi biar enak dibaca */
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* --- DESAIN BAGIAN GALERI --- */
+.galeri-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.galeri-section h2 {
+    color: #d10056;
+    margin-bottom: 40px;
+}
+
+.kumpulan-foto {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak antar foto */
+    flex-wrap: wrap; /* Kalau layar hp kecil, fotonya turun ke bawah */
+}
+
+.bingkai-foto img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px; /* Ujung fotonya agak tumpul/melengkung */
+    transition: transform 0.3s; /* Persiapan untuk animasi */
+}
+
+/* Animasi: Saat mouse diarahkan ke foto, fotonya agak membesar (nge-zoom) */
+.bingkai-foto img:hover {
+    transform: scale(1.05);
+}
+
+/* --- DESAIN FOOTER --- */
+footer {
+    background-color: #ffb6c1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}

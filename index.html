@@ -3,49 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffb6c1">
     <title>Untuk Kesayanganku 💖</title>
+
+    <!-- Preview saat link dikirim di WhatsApp / Instagram / Sosial Media -->
+    <meta name="description" content="Aku bikin website ini cuman buat kamu">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Untuk Kesayanganku 💖">
+    <meta property="og:description" content="Aku bikin website ini cuman buat kamu">
+    <meta property="og:image" content="WhatsApp%20Image%202026-08-01%20at%2019.51.41%20(1).jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Untuk Kesayanganku 💖">
+    <meta name="twitter:description" content="Aku bikin website ini cuman buat kamu">
+    <meta name="twitter:image" content="WhatsApp%20Image%202026-08-01%20at%2019.51.41%20(1).jpeg">
+
+    <!-- Ikon Hati di Tab Browser HP & Laptop -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💖</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="envelope-locked">
+
+    <!-- Layar Pembuka Amplop 3D Interaktif -->
+    <div class="envelope-overlay" id="envelopeOverlay" aria-hidden="true">
+        <div class="envelope-stage" id="envelopeTrigger">
+            <div class="envelope-glow"></div>
+            <div class="envelope-3d" id="envelope3d">
+                <div class="envelope-back"></div>
+                <div class="envelope-letter">
+                    <div class="letter-mini-heart"></div>
+                    <div class="letter-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="envelope-front"></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">
+                    <div class="seal-pulse"></div>
+                    <div class="seal-pulse seal-pulse-2"></div>
+                    <div class="seal-heart"></div>
+                </div>
+            </div>
+            <div class="envelope-shadow"></div>
+            <div class="burst-container" id="burstContainer"></div>
+        </div>
+    </div>
+
+    <div class="bg-ornaments" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="floating-hearts" id="floatingHearts"></div>
+    </div>
 
     <section class="hero-section">
-        <div class="teks-hero">
-            <h1>Hai, Sayang! 💖</h1>
-            <p>Aku bikin website khusus ini cuma buat kamu. Scroll ke bawah ya!</p>
+        <div class="hero-card">
+            <div class="teks-hero">
+                <h1>Hai, Sayang! 💖</h1>
+                <p>Aku bikin website ini cuman buat kamu</p>
+            </div>
+            <div class="foto-hero">
+                <div class="foto-ring">
+                    <img src="WhatsApp Image 2026-08-01 at 19.51.41 (1).jpeg" alt="Foto Pacarku yang Cantik" class="zoomable-img">
+                </div>
+            </div>
         </div>
-        <div class="foto-hero">
-            <img src="WhatsApp Image 2026-08-01 at 19.51.41 (1).jpeg" alt="Foto Pacarku yang Cantik">
-        </div>
+        <a href="#pesan" class="scroll-indicator" aria-label="Scroll">
+            <span></span>
+        </a>
     </section>
 
-    <section class="pesan-section">
-        <h2>Kenapa Kamu Spesial? ✨</h2>
-        <p>
-            Makasih ya udah selalu ada buat aku. 
-            Senyum kamu selalu bisa bikin hari-hariku jadi lebih baik.
-            Web sederhana ini adalah tempat aku nyimpen memori manis kita.
-        </p>
+    <section class="pesan-section" id="pesan">
+        <div class="surat-cinta">
+            <div class="wax-seal" aria-hidden="true"></div>
+            <h2>Kenapa Kamu Spesial? ✨</h2>
+            <div class="divider-ornament" aria-hidden="true"></div>
+            <p>
+                Makasih ya udah selalu ada buat aku,maaf aku belum bisa jadi cowo yang baik buat kamu,,tapi aku janji ke kamu aku bakal jadi orang yang lebi baik.
+                aku doain kamu semoga bahagia,kamu bahagia aku juga ikut seneng,aku gatau harus bilang apa ke kamu intinya kamu harus bahagia.
+                aku bakal tebus semua kesalahan aku ke kamu,jujur berat banget pisah sama kamu,aku gatau mau gimana aku kayak hilang arah ga ada kamu.
+                tapi mau gimana lagi ini memang salah aku,aku nyesel aku minta maaf sama kamu,makasih ya udah sebaik itu sama aku,kalo kita emang jodoh pasti kita bakal ketemu lagi,maaf kalo aku bilang gini.
+                aku masih gabisa terima kalo kita udah pisah, sehat" ya sayangg aku bakal sayang kamu sampe kapanpun,dadah sayanggg love uuuuu ❤️.
+                                                            <span class="cinta-terakhir">"KAMU CINTA TERAKHIR KU SEHAT" YA MAMA KIBU❤️"</span>
+            </p>
+        </div>
     </section>
 
     <section class="galeri-section">
-        <h2>Galeri Kesayangan 📸</h2>
+        <h2>Cantik 📸</h2>
+        <div class="divider-ornament" aria-hidden="true"></div>
         <div class="kumpulan-foto">
             <!-- Baris ini untuk memunculkan foto, ulangi kode ini untuk nambah foto lain -->
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.41.jpeg" alt="Memori 1">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.41.jpeg" alt="Memori 1" class="zoomable-img">
             </div>
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (2).jpeg" alt="Memori 2">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (2).jpeg" alt="Memori 2" class="zoomable-img">
             </div>
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (1).jpeg" alt="Memori 3">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (1).jpeg" alt="Memori 3" class="zoomable-img">
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Dibuat dengan ❤️ oleh cowokmu.</p>
+        <div class="footer-inner">
+            <p>AKU LIAT KAMU DARI JAUH ❤️..</p>
+        </div>
     </footer>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Tutup"></button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="">
+    </div>
+
+    <script>
+        // Interaksi Amplop 3D Pembuka
+        const envelopeOverlay = document.getElementById('envelopeOverlay');
+        const envelopeTrigger = document.getElementById('envelopeTrigger');
+        const envelope3d = document.getElementById('envelope3d');
+        const burstContainer = document.getElementById('burstContainer');
+        let isEnvelopeOpened = false;
+
+        function createHeartBurst() {
+            for (let i = 0; i < 18; i++) {
+                const p = document.createElement('span');
+                p.className = 'burst-particle ' + (i % 2 === 0 ? 'heart-shape' : 'petal');
+                const angle = (Math.PI * 2 * i) / 18 + (Math.random() * 0.3 - 0.15);
+                const distance = 90 + Math.random() * 110;
+                const tx = Math.cos(angle) * distance;
+                const ty = Math.sin(angle) * distance - 40;
+                p.style.setProperty('--tx', tx + 'px');
+                p.style.setProperty('--ty', ty + 'px');
+                p.style.setProperty('--rot', (Math.random() * 120 - 60) + 'deg');
+                burstContainer.appendChild(p);
+            }
+        }
+
+        envelopeTrigger.addEventListener('click', () => {
+            if (isEnvelopeOpened) return;
+            isEnvelopeOpened = true;
+            envelope3d.classList.add('open');
+            createHeartBurst();
+
+            setTimeout(() => {
+                envelopeOverlay.classList.add('fade-out');
+                document.body.classList.remove('envelope-locked');
+            }, 1350);
+
+            setTimeout(() => {
+                envelopeOverlay.style.display = 'none';
+            }, 2200);
+        });
+
+        // Animasi partikel hati & kelopak melayang lembut di background
+        const heartsContainer = document.getElementById('floatingHearts');
+        for (let i = 0; i < 24; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'bg-particle ' + (i % 3 === 0 ? 'petal' : 'heart-shape');
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.animationDuration = (13 + Math.random() * 15) + 's';
+            particle.style.animationDelay = (-Math.random() * 22) + 's';
+            const scale = (0.55 + Math.random() * 0.85).toFixed(2);
+            particle.style.setProperty('--p-scale', scale);
+            particle.style.opacity = (0.16 + Math.random() * 0.34).toFixed(2);
+            heartsContainer.appendChild(particle);
+        }
+
+        // Efek reveal halus saat halaman di-scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.12 });
+
+        document.querySelectorAll('.hero-card, .surat-cinta, .galeri-section h2, .bingkai-foto, .footer-inner').forEach((el) => {
+            el.classList.add('reveal-on-scroll');
+            observer.observe(el);
+        });
+
+        // Lightbox interaktif saat foto diklik
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        document.querySelectorAll('.zoomable-img').forEach((img) => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
 
 </body>
 </html>

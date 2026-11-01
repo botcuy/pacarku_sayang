@@ -27,10 +27,11 @@
 </head>
 <body class="envelope-locked">
 
-    <!-- Layar Pembuka Amplop 3D Interaktif -->
-    <div class="envelope-overlay" id="envelopeOverlay" aria-hidden="true">
-        <div class="envelope-stage" id="envelopeTrigger">
+    <!-- Layar Kunci Login & Amplop 3D Interaktif -->
+    <div class="envelope-overlay" id="envelopeOverlay">
+        <div class="envelope-stage">
             <div class="envelope-glow"></div>
+
             <div class="envelope-3d" id="envelope3d">
                 <div class="envelope-back"></div>
                 <div class="envelope-letter">
@@ -51,6 +52,19 @@
             </div>
             <div class="envelope-shadow"></div>
             <div class="burst-container" id="burstContainer"></div>
+
+            <!-- Form Login Eksklusif -->
+            <form class="login-card" id="loginForm" autocomplete="off">
+                <div class="login-field">
+                    <input type="text" id="loginUser" placeholder="Username" required autocomplete="off" autocapitalize="none" spellcheck="false">
+                </div>
+                <div class="login-field">
+                    <input type="password" id="loginPass" placeholder="Sandi" required autocomplete="off" inputmode="numeric">
+                </div>
+                <button type="submit" class="login-btn" id="loginBtn" aria-label="Buka">
+                    <span class="btn-heart-icon"></span>
+                </button>
+            </form>
         </div>
     </div>
 
@@ -89,7 +103,7 @@
                 aku bakal tebus semua kesalahan aku ke kamu,jujur berat banget pisah sama kamu,aku gatau mau gimana aku kayak hilang arah ga ada kamu.
                 tapi mau gimana lagi ini memang salah aku,aku nyesel aku minta maaf sama kamu,makasih ya udah sebaik itu sama aku,kalo kita emang jodoh pasti kita bakal ketemu lagi,maaf kalo aku bilang gini.
                 aku masih gabisa terima kalo kita udah pisah, sehat" ya sayangg aku bakal sayang kamu sampe kapanpun,dadah sayanggg love uuuuu ❤️.
-                                                            <span class="cinta-terakhir">"KAMU CINTA TERAKHIR KU SEHAT" YA MAMA KIBU❤️"</span>
+                                                            <span class="cinta-terakhir">"KAMU CINTA TERAKHIR KU"</span>
             </p>
         </div>
     </section>
@@ -100,20 +114,26 @@
         <div class="kumpulan-foto">
             <!-- Baris ini untuk memunculkan foto, ulangi kode ini untuk nambah foto lain -->
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.41.jpeg" alt="Memori 1" class="zoomable-img">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.41.jpeg" alt="Memori 1" class="zoomable-img" loading="lazy">
             </div>
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (2).jpeg" alt="Memori 2" class="zoomable-img">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (2).jpeg" alt="Memori 2" class="zoomable-img" loading="lazy">
             </div>
             <div class="bingkai-foto">
-                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (1).jpeg" alt="Memori 3" class="zoomable-img">
+                <img src="WhatsApp Image 2026-08-01 at 19.51.42 (1).jpeg" alt="Memori 3" class="zoomable-img" loading="lazy">
+            </div>
+            <div class="bingkai-foto">
+                <img src="lockscreen_bunga_1_full.jpg" alt="Memori 4" class="zoomable-img" loading="lazy">
+            </div>
+            <div class="bingkai-foto polaroid-wide">
+                <img src="lockscreen_2_landscape_full.jpg" alt="Memori 5" class="zoomable-img" loading="lazy">
             </div>
         </div>
     </section>
 
     <footer>
         <div class="footer-inner">
-            <p>AKU LIAT KAMU DARI JAUH ❤️..</p>
+            <p>AKU LIAT KAMU DARI JAUH MAMA KIBU❤️..</p>
         </div>
     </footer>
 
@@ -123,63 +143,112 @@
     </div>
 
     <script>
-        // Interaksi Amplop 3D Pembuka
+        const isMobile = window.matchMedia('(max-width: 860px)').matches;
+
+        // Interaksi Login & Amplop 3D Pembuka (Dioptimalkan 60fps untuk HP)
         const envelopeOverlay = document.getElementById('envelopeOverlay');
-        const envelopeTrigger = document.getElementById('envelopeTrigger');
         const envelope3d = document.getElementById('envelope3d');
         const burstContainer = document.getElementById('burstContainer');
+        const loginForm = document.getElementById('loginForm');
+        const loginUser = document.getElementById('loginUser');
+        const loginPass = document.getElementById('loginPass');
         let isEnvelopeOpened = false;
 
+        // Kode verifikasi tersamar (username: nazzla, sandi: 120629)
+        const _u = [110, 97, 122, 122, 108, 97].map(c => String.fromCharCode(c)).join('');
+        const _p = [49, 50, 48, 54, 50, 57].map(c => String.fromCharCode(c)).join('');
+
         function createHeartBurst() {
-            for (let i = 0; i < 18; i++) {
+            const count = isMobile ? 12 : 18;
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < count; i++) {
                 const p = document.createElement('span');
                 p.className = 'burst-particle ' + (i % 2 === 0 ? 'heart-shape' : 'petal');
-                const angle = (Math.PI * 2 * i) / 18 + (Math.random() * 0.3 - 0.15);
-                const distance = 90 + Math.random() * 110;
-                const tx = Math.cos(angle) * distance;
-                const ty = Math.sin(angle) * distance - 40;
+                const angle = (Math.PI * 2 * i) / count + (Math.random() * 0.25 - 0.12);
+                const distance = (isMobile ? 70 : 90) + Math.random() * 90;
+                const tx = Math.round(Math.cos(angle) * distance);
+                const ty = Math.round(Math.sin(angle) * distance - 35);
                 p.style.setProperty('--tx', tx + 'px');
                 p.style.setProperty('--ty', ty + 'px');
-                p.style.setProperty('--rot', (Math.random() * 120 - 60) + 'deg');
-                burstContainer.appendChild(p);
+                p.style.setProperty('--rot', Math.round(Math.random() * 110 - 55) + 'deg');
+                fragment.appendChild(p);
             }
+            burstContainer.appendChild(fragment);
         }
 
-        envelopeTrigger.addEventListener('click', () => {
+        function unlockAndOpenEnvelope() {
             if (isEnvelopeOpened) return;
             isEnvelopeOpened = true;
-            envelope3d.classList.add('open');
-            createHeartBurst();
+            loginUser.blur();
+            loginPass.blur();
+
+            requestAnimationFrame(() => {
+                loginForm.classList.add('unlocked');
+                envelope3d.classList.add('open');
+                createHeartBurst();
+            });
 
             setTimeout(() => {
                 envelopeOverlay.classList.add('fade-out');
                 document.body.classList.remove('envelope-locked');
-            }, 1350);
+            }, 1300);
 
             setTimeout(() => {
                 envelopeOverlay.style.display = 'none';
-            }, 2200);
+            }, 2050);
+        }
+
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const uVal = loginUser.value.trim().toLowerCase();
+            const pVal = loginPass.value.trim();
+
+            if (uVal === _u && pVal === _p) {
+                unlockAndOpenEnvelope();
+            } else {
+                loginForm.classList.remove('shake-error');
+                void loginForm.offsetWidth;
+                loginForm.classList.add('shake-error');
+            }
         });
 
-        // Animasi partikel hati & kelopak melayang lembut di background
+        // Jika amplop diklik sebelum login, arahkan ke kolom input
+        envelope3d.addEventListener('click', () => {
+            if (!isEnvelopeOpened) {
+                loginForm.classList.remove('shake-error');
+                void loginForm.offsetWidth;
+                loginForm.classList.add('shake-error');
+                if (!loginUser.value.trim()) {
+                    loginUser.focus();
+                } else {
+                    loginPass.focus();
+                }
+            }
+        });
+
+        // Animasi partikel hati & kelopak melayang (ringan di GPU HP)
         const heartsContainer = document.getElementById('floatingHearts');
-        for (let i = 0; i < 24; i++) {
+        const particleCount = isMobile ? 12 : 22;
+        const particleFragment = document.createDocumentFragment();
+        for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('span');
             particle.className = 'bg-particle ' + (i % 3 === 0 ? 'petal' : 'heart-shape');
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.animationDuration = (13 + Math.random() * 15) + 's';
-            particle.style.animationDelay = (-Math.random() * 22) + 's';
-            const scale = (0.55 + Math.random() * 0.85).toFixed(2);
+            particle.style.left = Math.round(Math.random() * 96 + 2) + 'vw';
+            particle.style.animationDuration = (14 + Math.random() * 14).toFixed(1) + 's';
+            particle.style.animationDelay = (-Math.random() * 20).toFixed(1) + 's';
+            const scale = (0.55 + Math.random() * 0.75).toFixed(2);
             particle.style.setProperty('--p-scale', scale);
-            particle.style.opacity = (0.16 + Math.random() * 0.34).toFixed(2);
-            heartsContainer.appendChild(particle);
+            particle.style.opacity = (0.18 + Math.random() * 0.3).toFixed(2);
+            particleFragment.appendChild(particle);
         }
+        heartsContainer.appendChild(particleFragment);
 
         // Efek reveal halus saat halaman di-scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.12 });
